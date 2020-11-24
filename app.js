@@ -28,7 +28,8 @@ personmodel.save(function (err, data) {
   else console.log(data);
 });
 //createmanypeople
-// const arrayofpeople=[{name:'aziz',age:'14',favoriteFoods:['pizza','spaghetti','kouskous']},{name:'amani',age:'21',favoriteFoods:['pizza','spaghetti','kouskous']}];
+/* const arrayofpeople=[{name:'ala',age:'13',favoriteFoods:['seafood','spaghetti','sushi']}
+,{name:'maryem',age:'21',favoriteFoods:['pizza','ejja','chappati']}];*/
 app.post("/", (req, res) => {
   person.create(req.body, (err, data) => {
     if (err) throw err;
@@ -92,7 +93,7 @@ app.get("/users/foods/:age", (req, res) => {
       res.send("Server Error");
     });
 });
-//set age to 20
+//set age 
 app.get("/users/age/:name", (req, res) => {
   person
     .findOneAndUpdate({ name: req.params.name }, { age: 20 })
@@ -124,7 +125,7 @@ app.get("/users/delete/:_id", (req, res) => {
       res.send("Server Error");
     });
 });
-//remove all person named "zouhour"
+//remove all person named "houssem"
 app.get("/users/remove/:name", (req, res) => {
   person
     .remove({ name: req.params.name })
